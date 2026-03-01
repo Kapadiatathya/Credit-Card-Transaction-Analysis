@@ -1,6 +1,42 @@
 table credit_card_full_dataset
 	lineageTag: de913527-1b76-4ecb-b63b-a29a7e45a68a
 
+	measure 'Total TPV' = SUM(credit_card_full_dataset[amt])
+		lineageTag: c92297ae-063d-4814-bc01-3b05bf2d75ef
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total transaction' = COUNTROWS(credit_card_full_dataset)
+		formatString: 0
+		lineageTag: 3ae6f7ae-4ae4-4f73-8e9b-a596652f68e2
+
+	measure 'Active Cardholders' = DISTINCTCOUNT(credit_card_full_dataset[cc_num])
+		formatString: 0
+		lineageTag: b40a8df0-cf56-407f-8586-d0635b2387e5
+
+	measure 'Avg Spend Per Customer' =
+			
+			DIVIDE([Total TPV], [Active Cardholders])
+		lineageTag: 38127fcb-c860-4c23-b7ce-a6d3b742d85b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Fraud Rate %' =
+			
+			DIVIDE(
+			    CALCULATE(COUNTROWS(credit_card_full_dataset), credit_card_full_dataset[is_fraud] = 1),
+			    [Total transaction]
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 94bc6408-5cf4-465f-919e-45d477220839
+
+	measure 'Fraud Loss Amount' =
+			
+			CALCULATE(SUM(credit_card_full_dataset[amt]), credit_card_full_dataset[is_fraud] = 1)
+		lineageTag: 08dce181-72b3-430d-ae33-10c452d6b1b4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column trans_date_trans_time
 		dataType: dateTime
 		formatString: General Date
@@ -42,13 +78,12 @@ table credit_card_full_dataset
 
 	column amt
 		dataType: double
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
 		lineageTag: 964ce982-fdd0-4906-bf19-809b14562b90
 		summarizeBy: sum
 		sourceColumn: amt
 
 		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column first
 		dataType: string
