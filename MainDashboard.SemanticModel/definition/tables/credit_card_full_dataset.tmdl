@@ -1,0 +1,232 @@
+table credit_card_full_dataset
+	lineageTag: de913527-1b76-4ecb-b63b-a29a7e45a68a
+
+	column trans_date_trans_time
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 715b4c61-9fb1-42aa-8684-ffa07e8cedc2
+		summarizeBy: none
+		sourceColumn: trans_date_trans_time
+
+		variation Variation
+			isDefault
+			relationship: d18586c6-167e-4e7b-9580-2e11d065d1c6
+			defaultHierarchy: LocalDateTable_e40b1068-18d1-46bd-ac76-e8fe27fc1cff.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column cc_num
+		dataType: int64
+		formatString: 0
+		lineageTag: ad4520be-2d96-4922-850e-442b37f60faf
+		summarizeBy: sum
+		sourceColumn: cc_num
+
+		annotation SummarizationSetBy = Automatic
+
+	column merchant
+		dataType: string
+		lineageTag: d073fc71-48d1-4ec9-a015-887b2e7dd866
+		summarizeBy: none
+		sourceColumn: merchant
+
+		annotation SummarizationSetBy = Automatic
+
+	column category
+		dataType: string
+		lineageTag: 7a6fa139-3118-4773-acf9-fa6780a0db35
+		summarizeBy: none
+		sourceColumn: category
+
+		annotation SummarizationSetBy = Automatic
+
+	column amt
+		dataType: double
+		lineageTag: 964ce982-fdd0-4906-bf19-809b14562b90
+		summarizeBy: sum
+		sourceColumn: amt
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column first
+		dataType: string
+		lineageTag: 98ccb88c-81d1-4b89-bea5-09b17371e6b0
+		summarizeBy: none
+		sourceColumn: first
+
+		annotation SummarizationSetBy = Automatic
+
+	column last
+		dataType: string
+		lineageTag: bd268019-d568-47d5-9950-15eb762f14cf
+		summarizeBy: none
+		sourceColumn: last
+
+		annotation SummarizationSetBy = Automatic
+
+	column gender
+		dataType: string
+		lineageTag: 4e786152-8f5e-487c-8cc1-92c5295af4bb
+		summarizeBy: none
+		sourceColumn: gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column street
+		dataType: string
+		lineageTag: c8d09e34-f8ec-4099-be54-44740bcd0575
+		summarizeBy: none
+		sourceColumn: street
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		lineageTag: fa579bf2-f541-4d59-8874-510999c0bbde
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	column state
+		dataType: string
+		lineageTag: 6a0acf1e-0697-42f5-bd79-7c90fa6f925e
+		summarizeBy: none
+		sourceColumn: state
+
+		annotation SummarizationSetBy = Automatic
+
+	column zip
+		dataType: int64
+		formatString: 0
+		lineageTag: 79678025-e9aa-4d32-b89a-6147d86306b9
+		summarizeBy: sum
+		sourceColumn: zip
+
+		annotation SummarizationSetBy = Automatic
+
+	column lat
+		dataType: double
+		lineageTag: 9fd5e281-cef9-4c7e-bf6f-70869a0a35b8
+		summarizeBy: sum
+		sourceColumn: lat
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column long
+		dataType: double
+		lineageTag: 23a18602-7043-4d2d-8fa7-4c3883d20c04
+		summarizeBy: sum
+		sourceColumn: long
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column city_pop
+		dataType: int64
+		formatString: 0
+		lineageTag: 99fbdc61-8a96-4e76-adaf-6983c4deb388
+		summarizeBy: sum
+		sourceColumn: city_pop
+
+		annotation SummarizationSetBy = Automatic
+
+	column job
+		dataType: string
+		lineageTag: 1d8ca43c-2fb5-4357-a191-99dc7c1ca71f
+		summarizeBy: none
+		sourceColumn: job
+
+		annotation SummarizationSetBy = Automatic
+
+	column dob
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: f8b693db-c914-4b22-a8b4-d8aa30c09c33
+		summarizeBy: none
+		sourceColumn: dob
+
+		variation Variation
+			isDefault
+			relationship: a1a70443-9864-4d7e-9c49-41e6c41e150a
+			defaultHierarchy: LocalDateTable_0d003b4a-5ad2-4246-beab-fdfd5cee4a14.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column trans_num
+		dataType: string
+		lineageTag: fb5192cf-e89c-4576-a83d-f795f3fc95d1
+		summarizeBy: none
+		sourceColumn: trans_num
+
+		annotation SummarizationSetBy = Automatic
+
+	column unix_time
+		dataType: int64
+		formatString: 0
+		lineageTag: 78b20bef-6723-425a-aa32-7bd2ebfc0ece
+		summarizeBy: sum
+		sourceColumn: unix_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column merch_lat
+		dataType: double
+		lineageTag: 102b7217-67f9-498d-886b-3883a3a73582
+		summarizeBy: sum
+		sourceColumn: merch_lat
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column merch_long
+		dataType: double
+		lineageTag: 9e0aed04-6210-43a0-92b4-08806464bad8
+		summarizeBy: sum
+		sourceColumn: merch_long
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column is_fraud
+		dataType: int64
+		formatString: 0
+		lineageTag: 17ae4d45-d1a6-41a2-9460-439a045568aa
+		summarizeBy: sum
+		sourceColumn: is_fraud
+
+		annotation SummarizationSetBy = Automatic
+
+	column merch_zipcode
+		dataType: int64
+		formatString: 0
+		lineageTag: b39735a6-0a22-43bd-bb39-34dc492423d3
+		summarizeBy: sum
+		sourceColumn: merch_zipcode
+
+		annotation SummarizationSetBy = Automatic
+
+	partition credit_card_full_dataset = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Jupyter Noteboks\DatasetDownload\credit_card_full_dataset.csv"),[Delimiter=",", Columns=24, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Unnamed: 0", Int64.Type}, {"trans_date_trans_time", type datetime}, {"cc_num", Int64.Type}, {"merchant", type text}, {"category", type text}, {"amt", type number}, {"first", type text}, {"last", type text}, {"gender", type text}, {"street", type text}, {"city", type text}, {"state", type text}, {"zip", Int64.Type}, {"lat", type number}, {"long", type number}, {"city_pop", Int64.Type}, {"job", type text}, {"dob", type date}, {"trans_num", type text}, {"unix_time", Int64.Type}, {"merch_lat", type number}, {"merch_long", type number}, {"is_fraud", Int64.Type}, {"merch_zipcode", Int64.Type}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Unnamed: 0"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

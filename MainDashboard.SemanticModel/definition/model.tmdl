@@ -1,0 +1,21 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-CA
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["credit_card_full_dataset"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table credit_card_full_dataset
+ref table DateTableTemplate_b7ae66f7-fa2e-428e-b55e-735d8473542b
+ref table LocalDateTable_e40b1068-18d1-46bd-ac76-e8fe27fc1cff
+ref table LocalDateTable_0d003b4a-5ad2-4246-beab-fdfd5cee4a14
+
+ref cultureInfo en-US
+

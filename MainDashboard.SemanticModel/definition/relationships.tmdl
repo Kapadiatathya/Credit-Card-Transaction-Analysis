@@ -1,0 +1,10 @@
+relationship d18586c6-167e-4e7b-9580-2e11d065d1c6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: credit_card_full_dataset.trans_date_trans_time
+	toColumn: LocalDateTable_e40b1068-18d1-46bd-ac76-e8fe27fc1cff.Date
+
+relationship a1a70443-9864-4d7e-9c49-41e6c41e150a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: credit_card_full_dataset.dob
+	toColumn: LocalDateTable_0d003b4a-5ad2-4246-beab-fdfd5cee4a14.Date
+
