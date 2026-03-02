@@ -37,6 +37,11 @@ table credit_card_full_dataset
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure 'Card Spend' = SUM(credit_card_full_dataset[amt])
+		lineageTag: a01cf84f-c4ec-4172-9fd7-8db2d8117c0d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column trans_date_trans_time
 		dataType: dateTime
 		formatString: General Date
@@ -247,6 +252,15 @@ table credit_card_full_dataset
 		lineageTag: b39735a6-0a22-43bd-bb39-34dc492423d3
 		summarizeBy: sum
 		sourceColumn: merch_zipcode
+
+		annotation SummarizationSetBy = Automatic
+
+	column Trans_Year =
+			
+			YEAR(credit_card_full_dataset[trans_date_trans_time])
+		formatString: 0
+		lineageTag: b64c6933-6976-4644-b20c-e5c1924b02e1
+		summarizeBy: sum
 
 		annotation SummarizationSetBy = Automatic
 

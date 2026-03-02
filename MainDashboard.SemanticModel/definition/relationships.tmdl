@@ -8,3 +8,35 @@ relationship a1a70443-9864-4d7e-9c49-41e6c41e150a
 	fromColumn: credit_card_full_dataset.dob
 	toColumn: LocalDateTable_0d003b4a-5ad2-4246-beab-fdfd5cee4a14.Date
 
+relationship 3c406be6-a7a7-38f3-a781-f4bc71fddcac
+	crossFilteringBehavior: bothDirections
+	fromColumn: credit_card_full_dataset.city
+	toColumn: Dim_City.City
+
+relationship 0c24937e-321e-c7db-71cb-06586b357ded
+	crossFilteringBehavior: bothDirections
+	fromColumn: Card_Transaction_Summary.city
+	toColumn: Dim_City.City
+
+relationship 0ce7377b-e069-e1ca-4b0c-b69bac3c51cd
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Card Summary'.city
+	toColumn: Dim_City.City
+
+relationship 61bd9711-d66c-b5ea-6eef-d2c77ae6867f
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Card Summary'.Trans_Year
+	toColumn: Dim_Year.Year
+
+relationship 2b2e8258-3c8c-5ee0-a73d-0adf7bb44adc
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	fromColumn: Card_Transaction_Summary.Trans_Year
+	toColumn: Dim_Year.Year
+
+relationship 63cdc7f4-d2bf-ae43-c4a9-3ee03a076a0f
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	fromColumn: credit_card_full_dataset.Trans_Year
+	toColumn: Dim_Year.Year
+

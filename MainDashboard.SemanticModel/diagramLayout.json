@@ -13,8 +13,8 @@
             "x": 0,
             "y": 0
           },
-          "nodeIndex": "ngs2020_decoded",
-          "nodeLineageTag": "b2700dde-0fd2-456e-b88c-d0513d44528e",
+          "nodeIndex": "credit_card_full_dataset",
+          "nodeLineageTag": "de913527-1b76-4ecb-b63b-a29a7e45a68a",
           "size": {
             "height": 300,
             "width": 234
@@ -26,7 +26,45 @@
             "x": 284,
             "y": 50
           },
-          "nodeIndex": "Dim_Employee",
+          "nodeIndex": "Card_Transaction_Summary",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 568,
+            "y": 50
+          },
+          "nodeIndex": "Card Summary",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 253.39999675750732,
+            "y": 337
+          },
+          "nodeIndex": "Dim_City",
+          "nodeLineageTag": "a06caa92-e68a-4ecc-a806-c34d6de68d8b",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 687.79999542236328,
+            "y": 309.5
+          },
+          "nodeIndex": "Dim_Year",
+          "nodeLineageTag": "d2088b45-5575-4782-add9-15be3ae247f4",
           "size": {
             "height": 200,
             "width": 234

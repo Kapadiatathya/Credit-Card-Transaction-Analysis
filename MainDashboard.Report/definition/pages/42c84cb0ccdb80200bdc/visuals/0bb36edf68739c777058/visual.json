@@ -1,0 +1,103 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "0bb36edf68739c777058",
+  "position": {
+    "x": 788.72701218055886,
+    "y": 150.40840697396703,
+    "z": 1003,
+    "height": 569.839980893241,
+    "width": 491.57869596369716,
+    "tabOrder": 1003
+  },
+  "visual": {
+    "visualType": "barChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "credit_card_full_dataset"
+                    }
+                  },
+                  "Property": "category"
+                }
+              },
+              "queryRef": "credit_card_full_dataset.category",
+              "nativeQueryRef": "Count of category",
+              "active": true
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Card_Transaction_Summary"
+                    }
+                  },
+                  "Property": "Trans_Year"
+                }
+              },
+              "queryRef": "Card_Transaction_Summary.Trans_Year",
+              "nativeQueryRef": "Trans_Year"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "credit_card_full_dataset"
+                        }
+                      },
+                      "Property": "amt"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(credit_card_full_dataset.amt)",
+              "nativeQueryRef": "Sum of amt"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "credit_card_full_dataset"
+                      }
+                    },
+                    "Property": "amt"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

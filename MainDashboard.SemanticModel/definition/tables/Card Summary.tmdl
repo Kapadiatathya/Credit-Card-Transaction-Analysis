@@ -1,0 +1,123 @@
+table 'Card Summary'
+	lineageTag: 80255c7b-71ea-466e-9b04-1c7eb6b6caae
+
+	measure 'Total Cards' =
+			
+			COUNTROWS(ALL('Card Summary'))
+		formatString: 0
+		lineageTag: e444f185-c4f1-452a-be69-0a5aa7ed5b85
+
+	measure 'Cumulative Spend' =
+			
+			CALCULATE(
+			    SUM('Card Summary'[Total Spend]),
+			    FILTER(
+			        ALL('Card Summary'),
+			        [Spend Rank] <= MAX([Spend Rank])
+			    )
+			)
+		lineageTag: 569724d7-f1b2-4089-b3bf-f6dde9349732
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Spend All' =
+			
+			CALCULATE(
+			    SUM('Card Summary'[Total Spend]),
+			    ALL('Card Summary')
+			)
+		lineageTag: 99d8998f-0410-4e42-97b8-ade08cbd8bd3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Cumulative % Spend' =
+			
+			DIVIDE(
+			    [Cumulative Spend],
+			    [Total Spend All]
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: e07a1973-26a5-47a7-a9ac-51116556690b
+
+	measure 'Pareto 50%' = 0.5
+		formatString: 0%;-0%;0%
+		lineageTag: ca110baa-3f58-43f5-b223-1d43589cefaf
+
+	column cc_num
+		formatString: 0
+		lineageTag: f27e5a26-967d-4522-9787-92f7775a6e40
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: credit_card_full_dataset[cc_num]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Spend'
+		lineageTag: 56f9e430-5bb1-419e-a6be-442f0996c0b9
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Total Spend]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Spend Rank' =
+			
+			RANKX(
+			    ALL('Card Summary'),
+			    'Card Summary'[Total Spend],
+			    ,
+			    DESC,
+			    DENSE
+			)
+		formatString: 0
+		lineageTag: 0f9fbf3d-4d7a-4532-b9af-2262329b1b43
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column '% of Cards' =
+			
+			DIVIDE(
+			    [Spend Rank],
+			    [Total Cards]
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: e435e8b7-a087-494a-b55d-5421629755bf
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		lineageTag: 18893c69-1f72-496e-9368-97edba979970
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: credit_card_full_dataset[city]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Trans_Year
+		formatString: 0
+		lineageTag: 02f6b2a3-5ffb-4726-8932-0876be8a4971
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: credit_card_full_dataset[Trans_Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Card Summary' = calculated
+		mode: import
+		source = ```
+				
+				SUMMARIZE(
+				    credit_card_full_dataset,
+				    credit_card_full_dataset[cc_num],
+				    credit_card_full_dataset[city],
+				    credit_card_full_dataset[Trans_Year], 
+				    "Total Spend", SUM(credit_card_full_dataset[amt])
+				)
+				```
+
+	annotation PBI_Id = 87c9e9251efb4c278c9e97b67d3a4c61
+

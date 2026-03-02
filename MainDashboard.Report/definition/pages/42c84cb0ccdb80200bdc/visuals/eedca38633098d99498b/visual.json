@@ -1,0 +1,104 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "eedca38633098d99498b",
+  "position": {
+    "x": 172.41939336040124,
+    "y": 409.648913303081,
+    "z": 1002,
+    "height": 310.59947456412709,
+    "width": 591.85096727967516,
+    "tabOrder": 1002
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Card Summary"
+                    }
+                  },
+                  "Property": "% of Cards"
+                }
+              },
+              "queryRef": "Card Summary.% of Cards",
+              "nativeQueryRef": "% of Cards",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Card Summary"
+                    }
+                  },
+                  "Property": "Cumulative % Spend"
+                }
+              },
+              "queryRef": "Card Summary.Cumulative % Spend",
+              "nativeQueryRef": "Cumulative % Spend"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Card Summary"
+                    }
+                  },
+                  "Property": "Pareto 50%"
+                }
+              },
+              "queryRef": "Card Summary.Pareto 80%",
+              "nativeQueryRef": "Pareto 50%"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Card Summary"
+                  }
+                },
+                "Property": "Cumulative % Spend"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "legend": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

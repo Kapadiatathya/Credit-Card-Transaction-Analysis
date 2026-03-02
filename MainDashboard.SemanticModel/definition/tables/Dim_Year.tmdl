@@ -1,0 +1,25 @@
+table Dim_Year
+	lineageTag: d2088b45-5575-4782-add9-15be3ae247f4
+
+	column Year
+		formatString: 0
+		lineageTag: 52aaa603-e29d-4b80-a8a5-6e0e568a90a1
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Year = calculated
+		mode: import
+		source =
+				
+				DISTINCT (
+				    SELECTCOLUMNS(
+				        credit_card_full_dataset,
+				        "Year", credit_card_full_dataset[Trans_Year]
+				    )
+				)
+
+	annotation PBI_Id = 4bd12000d2b04b95932e38cb12a8d2ad
+

@@ -1,0 +1,156 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "55e9cc600824643978e8",
+  "position": {
+    "x": 180.97922139957009,
+    "y": 52.581800812037258,
+    "z": 1001,
+    "height": 348.50728445187485,
+    "width": 574.73131120133746,
+    "tabOrder": 1001
+  },
+  "visual": {
+    "visualType": "columnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Card_Transaction_Summary"
+                    }
+                  },
+                  "Property": "TransactionBucket"
+                }
+              },
+              "queryRef": "Card_Transaction_Summary.TransactionBucket",
+              "nativeQueryRef": "TransactionBucket",
+              "active": true
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Card_Transaction_Summary"
+                    }
+                  },
+                  "Property": "Trans_Year"
+                }
+              },
+              "queryRef": "Card_Transaction_Summary.Trans_Year",
+              "nativeQueryRef": "Trans_Year"
+            }
+          ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Card_Transaction_Summary"
+                    }
+                  },
+                  "Property": "Avg Spend Per Card"
+                }
+              },
+              "queryRef": "Card_Transaction_Summary.Avg Spend Per Card",
+              "nativeQueryRef": "Avg Spend Per Card"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Card_Transaction_Summary"
+                    }
+                  },
+                  "Property": "Cards Per Bucket"
+                }
+              },
+              "queryRef": "Card_Transaction_Summary.Cards Per Bucket",
+              "nativeQueryRef": "Cards Per Bucket"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Card_Transaction_Summary"
+                  }
+                },
+                "Property": "TransactionBucket"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "9d6ddbe2c8e10a4c20a1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Card_Transaction_Summary"
+              }
+            },
+            "Property": "TransactionBucket"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "8c2d6fbfedc6b76445e7",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Card_Transaction_Summary"
+              }
+            },
+            "Property": "Cards Per Bucket"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "47b789351db57e3022ab",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Card_Transaction_Summary"
+              }
+            },
+            "Property": "Avg Spend Per Card"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

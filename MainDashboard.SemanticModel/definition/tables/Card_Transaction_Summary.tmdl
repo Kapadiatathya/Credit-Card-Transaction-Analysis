@@ -1,0 +1,112 @@
+table Card_Transaction_Summary
+	lineageTag: 6de74eb2-d73e-4996-89fe-c4fa030a65cb
+
+	measure 'Cards Per Bucket' =
+			
+			COUNTROWS(Card_Transaction_Summary)
+		formatString: 0
+		lineageTag: 18b63257-fed0-4c0c-b323-fdb2e718e5e1
+
+	measure 'Avg Spend Per Card' =
+			
+			AVERAGE(Card_Transaction_Summary[TotalSpend])
+		lineageTag: a8b6e5ce-27b7-4528-953c-450d99b64190
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column cc_num
+		formatString: 0
+		lineageTag: 92680187-4da7-413c-8b79-0870173d41f8
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: credit_card_full_dataset[cc_num]
+
+		annotation SummarizationSetBy = Automatic
+
+	column TransactionCount
+		formatString: 0
+		lineageTag: 1c560162-83a9-4a4f-9e81-f2b79e66bafa
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [TransactionCount]
+
+		annotation SummarizationSetBy = Automatic
+
+	column TotalSpend
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 13d014d3-0f6a-42e7-b826-61ce96edc546
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [TotalSpend]
+
+		annotation SummarizationSetBy = Automatic
+
+	column TransactionBucket =
+			
+			SWITCH(
+			    TRUE(),
+			    [TransactionCount] <= 100, "0–100",
+			    [TransactionCount] <= 500, "101–500",
+			    [TransactionCount] <= 1000, "501–1000",
+			    [TransactionCount] <= 2000, "1001–2000",
+			    [TransactionCount] <= 3000, "2001–3000",
+			    [TransactionCount] <= 4000, "3001–4000",
+			    "4000+"
+			)
+		lineageTag: b723578e-c8e1-4ea8-8d91-f5f999e91fd9
+		summarizeBy: none
+		sortByColumn: TransactionBucketSort
+
+		annotation SummarizationSetBy = Automatic
+
+	column TransactionBucketSort =
+			
+			SWITCH(
+			    TRUE(),
+			    [TransactionCount] <= 100, 1,
+			    [TransactionCount] <= 500, 2,
+			    [TransactionCount] <= 1000, 3,
+			    [TransactionCount] <= 2000, 4,
+			    [TransactionCount] <= 3000, 5,
+			    [TransactionCount] <= 4000, 6,
+			    7
+			)
+		formatString: 0
+		lineageTag: c2ef4a92-57e2-46c3-b582-bf24ab654800
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		lineageTag: 6c2cee6d-be8b-48f0-a060-8f987f122f11
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: credit_card_full_dataset[city]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Trans_Year
+		formatString: 0
+		lineageTag: a57b2aad-706a-49de-a9bf-9c5388e3c6b6
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: credit_card_full_dataset[Trans_Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Card_Transaction_Summary = calculated
+		mode: import
+		source = ```
+				
+				SUMMARIZE(
+				    credit_card_full_dataset,
+				    credit_card_full_dataset[cc_num],
+				    credit_card_full_dataset[city],
+				    credit_card_full_dataset[Trans_Year], 
+				    "TransactionCount", COUNT(credit_card_full_dataset[cc_num]),
+				    "TotalSpend", SUM(credit_card_full_dataset[amt])
+				)
+				```
+
+	annotation PBI_Id = 2098ff4b792140f89a1d306bbd652312
+

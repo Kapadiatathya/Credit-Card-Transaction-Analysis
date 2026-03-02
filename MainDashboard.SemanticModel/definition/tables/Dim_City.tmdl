@@ -1,0 +1,24 @@
+table Dim_City
+	lineageTag: a06caa92-e68a-4ecc-a806-c34d6de68d8b
+
+	column City
+		lineageTag: 99df1a40-70b7-45fd-81a7-392d1713995b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [City]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_City = calculated
+		mode: import
+		source =
+				
+				DISTINCT (
+				    SELECTCOLUMNS(
+				        credit_card_full_dataset,
+				        "City", credit_card_full_dataset[city]
+				    )
+				)
+
+	annotation PBI_Id = a6a01ef9e0984b7f8c26b3cde3d00b87
+
