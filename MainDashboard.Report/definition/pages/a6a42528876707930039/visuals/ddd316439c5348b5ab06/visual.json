@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "ddd316439c5348b5ab06",
+  "position": {
+    "x": 722.69405302125631,
+    "y": 22.0109863864342,
+    "z": 3000,
+    "height": 450.00238834487703,
+    "width": 512.36684977310722,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "barChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "credit_card_full_dataset"
+                    }
+                  },
+                  "Property": "Trans_DayName"
+                }
+              },
+              "queryRef": "credit_card_full_dataset.Trans_DayName",
+              "nativeQueryRef": "Trans_DayName",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "credit_card_full_dataset"
+                    }
+                  },
+                  "Property": "Fraud Transactions"
+                }
+              },
+              "queryRef": "credit_card_full_dataset.Fraud Transactions",
+              "nativeQueryRef": "Fraud Transactions"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "credit_card_full_dataset"
+                  }
+                },
+                "Property": "Fraud Transactions"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

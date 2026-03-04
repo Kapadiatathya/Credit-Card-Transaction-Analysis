@@ -42,6 +42,25 @@ table credit_card_full_dataset
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure 'Fraud Transactions' =
+			
+			CALCULATE(
+			    COUNTROWS(credit_card_full_dataset),
+			    credit_card_full_dataset[is_fraud] = 1
+			)
+		formatString: 0
+		lineageTag: 7f785bd1-4010-4675-82f5-13456269c0c5
+
+	measure 'Fraud Rate' =
+			
+			DIVIDE(
+			    [Fraud Transactions],
+			    COUNTROWS(credit_card_full_dataset)
+			)
+		lineageTag: 8fc65359-df18-41c5-af32-ac213f717b7f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column trans_date_trans_time
 		dataType: dateTime
 		formatString: General Date
@@ -260,6 +279,54 @@ table credit_card_full_dataset
 			YEAR(credit_card_full_dataset[trans_date_trans_time])
 		formatString: 0
 		lineageTag: b64c6933-6976-4644-b20c-e5c1924b02e1
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Transaction_Hour = HOUR(credit_card_full_dataset[trans_date_trans_time])
+		formatString: 0
+		lineageTag: 53f6cbae-e034-4157-9287-6628d78cc658
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Trans_DayName = FORMAT(credit_card_full_dataset[trans_date_trans_time], "dddd")
+		lineageTag: 92e17dff-befa-4e10-ac2d-53a16757393f
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Trans_MonthName =
+			
+			FORMAT(
+			    credit_card_full_dataset[trans_date_trans_time],
+			    "MMMM"
+			)
+		lineageTag: f056f25f-606c-49bc-b90c-31166b8a3912
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthAndYear =
+			
+			FORMAT(
+			    credit_card_full_dataset[trans_date_trans_time],
+			    "YYYY-MMMM"
+			)
+		lineageTag: f51c556f-a2ac-449e-a2f9-af9bf9a63802
+		summarizeBy: none
+		sortByColumn: YearMonthSort
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearMonthSort =
+			
+			YEAR(credit_card_full_dataset[trans_date_trans_time]) * 100
+			    + MONTH(credit_card_full_dataset[trans_date_trans_time])
+		formatString: 0
+		lineageTag: 5bb3926f-745a-4eba-80f5-eda268d2355b
 		summarizeBy: sum
 
 		annotation SummarizationSetBy = Automatic

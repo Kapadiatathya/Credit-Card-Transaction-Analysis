@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "1be0f472693545d02042",
+  "position": {
+    "x": 189.53904943873897,
+    "y": 498.91569142584189,
+    "z": 3001,
+    "height": 207.88153809410079,
+    "width": 1076.0926677812276,
+    "tabOrder": 3001
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "credit_card_full_dataset"
+                    }
+                  },
+                  "Property": "MonthAndYear"
+                }
+              },
+              "queryRef": "credit_card_full_dataset.MonthAndYear",
+              "nativeQueryRef": "MonthAndYear",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "credit_card_full_dataset"
+                    }
+                  },
+                  "Property": "Fraud Transactions"
+                }
+              },
+              "queryRef": "credit_card_full_dataset.Fraud Transactions",
+              "nativeQueryRef": "Fraud Transactions"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "credit_card_full_dataset"
+                  }
+                },
+                "Property": "MonthAndYear"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
