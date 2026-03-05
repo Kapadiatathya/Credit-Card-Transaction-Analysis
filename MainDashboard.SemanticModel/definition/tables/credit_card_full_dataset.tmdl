@@ -293,6 +293,9 @@ table credit_card_full_dataset
 	column Trans_DayName = FORMAT(credit_card_full_dataset[trans_date_trans_time], "dddd")
 		lineageTag: 92e17dff-befa-4e10-ac2d-53a16757393f
 		summarizeBy: none
+		sortByColumn: DaySort
+
+		changedProperty = SortByColumn
 
 		annotation SummarizationSetBy = Automatic
 
@@ -327,6 +330,18 @@ table credit_card_full_dataset
 			    + MONTH(credit_card_full_dataset[trans_date_trans_time])
 		formatString: 0
 		lineageTag: 5bb3926f-745a-4eba-80f5-eda268d2355b
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column DaySort =
+			
+			WEEKDAY(
+			    credit_card_full_dataset[trans_date_trans_time],
+			    2
+			)
+		formatString: 0
+		lineageTag: b6c8bba0-1723-46c2-96f2-b973912db450
 		summarizeBy: sum
 
 		annotation SummarizationSetBy = Automatic
