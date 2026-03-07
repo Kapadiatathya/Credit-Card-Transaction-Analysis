@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "8a264e67014cc245b0e5",
   "position": {
-    "x": 838.86314783854789,
-    "y": 113.72342966324338,
+    "x": 1004.4630563326019,
+    "y": 123.49955610646745,
     "z": 4000,
-    "height": 146.73990924289467,
-    "width": 201.76737520898018,
+    "height": 146.82725003768908,
+    "width": 201.7159416405635,
     "tabOrder": 4000
   },
   "visual": {
@@ -67,6 +67,22 @@
             "id": "default"
           }
         }
+      ],
+      "outline": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -82,8 +98,39 @@
             }
           }
         }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "5d5e9cdfe7cb78224029",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "credit_card_full_dataset"
+              }
+            },
+            "Property": "Active Cardholders"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

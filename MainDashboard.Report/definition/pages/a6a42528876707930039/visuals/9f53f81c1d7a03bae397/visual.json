@@ -70,6 +70,53 @@
         "isDefaultSort": true
       }
     },
+    "visualContainerObjects": {
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "33562335ec106e9bd212",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "credit_card_full_dataset"
+              }
+            },
+            "Property": "Transaction_Hour"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ea5f55930653d5723c38",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "credit_card_full_dataset"
+              }
+            },
+            "Property": "Fraud Transactions"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

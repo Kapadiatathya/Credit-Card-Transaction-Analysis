@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "fd88e4355122deb30740",
   "position": {
-    "x": 202.85714285714286,
-    "y": 52.857142857142861,
+    "x": 183.8771168696293,
+    "y": 53.516474312802565,
     "z": 6001,
-    "height": 628.57142857142856,
-    "width": 1061.4285714285716,
+    "height": 655.91986465434934,
+    "width": 1079.9350072865543,
     "tabOrder": 6001
   },
   "visual": {
@@ -104,21 +104,21 @@
             "zoom": {
               "expr": {
                 "Literal": {
-                  "Value": "0.23D"
+                  "Value": "2.48D"
                 }
               }
             },
             "centerLongitude": {
               "expr": {
                 "Literal": {
-                  "Value": "-0.3004982865139709D"
+                  "Value": "-116.81130000000002D"
                 }
               }
             },
             "centerLatitude": {
               "expr": {
                 "Literal": {
-                  "Value": "5.684341886080802e-14D"
+                  "Value": "48.394472017065624D"
                 }
               }
             }
@@ -253,6 +253,80 @@
         }
       ]
     },
+    "visualContainerObjects": {
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "e4fcb0f1aca6bbe47b8b",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "credit_card_full_dataset"
+              }
+            },
+            "Property": "Total transaction"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a4be8ab2abaea07ba712",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "credit_card_full_dataset"
+              }
+            },
+            "Property": "long"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "cdfd4ab470e4dcc923d9",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "credit_card_full_dataset"
+              }
+            },
+            "Property": "lat"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

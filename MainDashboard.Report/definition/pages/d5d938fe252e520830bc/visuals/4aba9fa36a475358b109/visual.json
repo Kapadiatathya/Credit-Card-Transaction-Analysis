@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "4aba9fa36a475358b109",
   "position": {
-    "x": 202.85714285714286,
-    "y": 52.857142857142861,
+    "x": 181.13268228948559,
+    "y": 85.077471984455357,
     "z": 2000,
-    "height": 628.57142857142856,
-    "width": 1061.4285714285716,
+    "height": 625.73108427276838,
+    "width": 1089.5405283170574,
     "tabOrder": 2000
   },
   "visual": {
@@ -109,21 +109,21 @@
             "zoom": {
               "expr": {
                 "Literal": {
-                  "Value": "3.19D"
+                  "Value": "3.37D"
                 }
               }
             },
             "centerLongitude": {
               "expr": {
                 "Literal": {
-                  "Value": "-98.71431500359188D"
+                  "Value": "-95.67142567370155D"
                 }
               }
             },
             "centerLatitude": {
               "expr": {
                 "Literal": {
-                  "Value": "41.135072927330526D"
+                  "Value": "38.51655230081738D"
                 }
               }
             },
@@ -328,6 +328,34 @@
                       "Percent": -0.25
                     }
                   }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }

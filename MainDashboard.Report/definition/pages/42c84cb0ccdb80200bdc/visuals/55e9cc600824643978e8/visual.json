@@ -105,6 +105,81 @@
         ]
       }
     },
+    "visualContainerObjects": {
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "6c42eff787db64263112",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Card_Transaction_Summary"
+              }
+            },
+            "Property": "TransactionBucket"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "2a98733238806b82901e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Card_Transaction_Summary"
+              }
+            },
+            "Property": "Trans_Year"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "4e1f7d3fe124256959d7",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Card_Transaction_Summary"
+              }
+            },
+            "Property": "Avg Spend Per Card"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "0ff42ea0988d44d0273d",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Card_Transaction_Summary"
+              }
+            },
+            "Property": "Cards Per Bucket"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
