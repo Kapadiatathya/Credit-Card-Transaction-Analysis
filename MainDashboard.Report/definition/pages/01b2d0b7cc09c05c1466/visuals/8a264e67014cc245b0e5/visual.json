@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "8a264e67014cc245b0e5",
   "position": {
-    "x": 960.55210305030243,
-    "y": 109.77738320574885,
-    "z": 9000,
-    "height": 146.82725003768908,
-    "width": 201.7159416405635,
+    "x": 955.063233890015,
+    "y": 131.73285984689861,
+    "z": 7000,
+    "height": 119.38290423625187,
+    "width": 160.5494229384077,
     "tabOrder": 4000
   },
   "visual": {
@@ -114,23 +114,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "5d5e9cdfe7cb78224029",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "credit_card_full_dataset"
-              }
-            },
-            "Property": "Active Cardholders"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

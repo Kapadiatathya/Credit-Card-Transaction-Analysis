@@ -40,3 +40,10 @@ relationship 63cdc7f4-d2bf-ae43-c4a9-3ee03a076a0f
 	fromColumn: credit_card_full_dataset.Trans_Year
 	toColumn: Dim_Year.Year
 
+relationship 1a075b5a-1f02-b441-38ad-30997cc57543
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: Card_Transaction_Summary.Trans_Year
+	toColumn: credit_card_full_dataset.Trans_Year
+

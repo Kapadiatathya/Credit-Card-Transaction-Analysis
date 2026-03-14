@@ -32,24 +32,6 @@
             }
           ]
         },
-        "Series": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Card_Transaction_Summary"
-                    }
-                  },
-                  "Property": "Trans_Year"
-                }
-              },
-              "queryRef": "Card_Transaction_Summary.Trans_Year",
-              "nativeQueryRef": "Trans_Year"
-            }
-          ]
-        },
         "Y": {
           "projections": [
             {
@@ -118,7 +100,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "cd762ffaa76633937949",
+        "name": "01732c023e6ad7a428d0",
         "field": {
           "Column": {
             "Expression": {
@@ -132,21 +114,7 @@
         "type": "Categorical"
       },
       {
-        "name": "12736024a852e9510d75",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Card_Transaction_Summary"
-              }
-            },
-            "Property": "Trans_Year"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "629deeb23433d1e1dad3",
+        "name": "8c07b04a01272507d24e",
         "field": {
           "Aggregation": {
             "Expression": {

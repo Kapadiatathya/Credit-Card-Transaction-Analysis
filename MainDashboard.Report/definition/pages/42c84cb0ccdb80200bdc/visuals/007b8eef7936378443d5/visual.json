@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
-  "name": "17a80aa2ab6991702438",
+  "name": "007b8eef7936378443d5",
   "position": {
-    "x": 788.86956521739125,
-    "y": 40.347826086956523,
-    "z": 5000,
-    "height": 93.217391304347828,
-    "width": 221.21739130434781,
-    "tabOrder": 5000
+    "x": 1009.9519254928894,
+    "y": 39.794301412083954,
+    "z": 5001,
+    "height": 93.310775724886525,
+    "width": 220.92698370156955,
+    "tabOrder": 5001
   },
   "visual": {
     "visualType": "slicer",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Dim_City"
+                      "Entity": "credit_card_full_dataset"
                     }
                   },
-                  "Property": "City"
+                  "Property": "state"
                 }
               },
-              "queryRef": "Dim_City.City",
-              "nativeQueryRef": "City",
+              "queryRef": "credit_card_full_dataset.state",
+              "nativeQueryRef": "state",
               "active": true
             }
           ]
@@ -77,44 +77,6 @@
                   "Value": "true"
                 }
               }
-            },
-            "selfFilter": {
-              "filter": {
-                "Version": 2,
-                "From": [
-                  {
-                    "Name": "d",
-                    "Entity": "Dim_City",
-                    "Type": 0
-                  }
-                ],
-                "Where": [
-                  {
-                    "Condition": {
-                      "Contains": {
-                        "Left": {
-                          "Column": {
-                            "Expression": {
-                              "SourceRef": {
-                                "Source": "d"
-                              }
-                            },
-                            "Property": "City"
-                          }
-                        },
-                        "Right": {
-                          "Literal": {
-                            "Value": "'New'"
-                          }
-                        }
-                      }
-                    },
-                    "Annotations": {
-                      "PowerBI.MParameterBehavior": 1
-                    }
-                  }
-                ]
-              }
             }
           }
         }
@@ -125,15 +87,15 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "6bb2cacae78e6b31649e",
+        "name": "cefdccf90c2ddc9d7b67",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "Dim_City"
+                "Entity": "credit_card_full_dataset"
               }
             },
-            "Property": "City"
+            "Property": "state"
           }
         },
         "type": "Categorical"

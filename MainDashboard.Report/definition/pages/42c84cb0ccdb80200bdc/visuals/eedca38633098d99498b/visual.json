@@ -115,51 +115,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "f5f9e3d0e749a469be84",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Card Summary"
-              }
-            },
-            "Property": "% of Cards"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "b0ff8b914b0d72ce53db",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Card Summary"
-              }
-            },
-            "Property": "Cumulative % Spend"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "d9d89cc134503572be0b",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Card Summary"
-              }
-            },
-            "Property": "Pareto 50%"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

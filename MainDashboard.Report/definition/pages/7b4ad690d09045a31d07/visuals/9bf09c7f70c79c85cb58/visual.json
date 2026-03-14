@@ -1,0 +1,97 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "9bf09c7f70c79c85cb58",
+  "position": {
+    "x": 182.49208005996766,
+    "y": 36.226528082547446,
+    "z": 5001,
+    "height": 89.194123854670934,
+    "width": 375.98753747968982,
+    "tabOrder": 5001
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "credit_card_full_dataset"
+                    }
+                  },
+                  "Property": "city"
+                }
+              },
+              "queryRef": "credit_card_full_dataset.city",
+              "nativeQueryRef": "city",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dropdown'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "selection": [
+        {
+          "properties": {
+            "singleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "selectAllCheckboxEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {}
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "db3aa27d49e600077b75",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "credit_card_full_dataset"
+              }
+            },
+            "Property": "city"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

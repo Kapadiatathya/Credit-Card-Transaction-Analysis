@@ -4,7 +4,7 @@
   "position": {
     "x": 281.30454446473141,
     "y": 400.68744870098328,
-    "z": 13000,
+    "z": 11000,
     "height": 146.82725003768908,
     "width": 259.34906782358166,
     "tabOrder": 5000
@@ -182,23 +182,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "8592e4a3351ecbc5e842",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "credit_card_full_dataset"
-              }
-            },
-            "Property": "Avg Spend Per Customer"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

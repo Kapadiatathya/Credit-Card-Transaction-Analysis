@@ -2,9 +2,9 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "75284fa82ca7b20b03d5",
   "position": {
-    "x": 279.93232717465958,
-    "y": 109.77738320574885,
-    "z": 5000,
+    "x": 263.46571969379721,
+    "y": 127.61620797668303,
+    "z": 3000,
     "height": 128.98842526675489,
     "width": 260.72128511365349,
     "tabOrder": 2000
@@ -256,23 +256,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "364773899ed604b0ae72",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "credit_card_full_dataset"
-              }
-            },
-            "Property": "Total TPV"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

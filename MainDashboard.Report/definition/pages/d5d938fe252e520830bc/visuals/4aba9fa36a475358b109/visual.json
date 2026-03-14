@@ -109,21 +109,21 @@
             "zoom": {
               "expr": {
                 "Literal": {
-                  "Value": "3.37D"
+                  "Value": "0.28D"
                 }
               }
             },
             "centerLongitude": {
               "expr": {
                 "Literal": {
-                  "Value": "-95.67142567370155D"
+                  "Value": "-0.28985252410222984D"
                 }
               }
             },
             "centerLatitude": {
               "expr": {
                 "Literal": {
-                  "Value": "38.51655230081738D"
+                  "Value": "2.842170943040401e-14D"
                 }
               }
             },
@@ -368,34 +368,6 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "d280e7c0dbc12d680023",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "credit_card_full_dataset"
-              }
-            },
-            "Property": "long"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "d1ccc33302c1c7107013",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "credit_card_full_dataset"
-              }
-            },
-            "Property": "lat"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
         "name": "55b91950a2a02c804565",
         "field": {
           "Column": {
@@ -448,25 +420,6 @@
           ]
         },
         "howCreated": "User"
-      },
-      {
-        "name": "3f6770bb37b3035060d5",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "credit_card_full_dataset"
-                  }
-                },
-                "Property": "amt"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

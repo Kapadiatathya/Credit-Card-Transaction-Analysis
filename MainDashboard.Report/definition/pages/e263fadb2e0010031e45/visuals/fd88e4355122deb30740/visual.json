@@ -4,10 +4,10 @@
   "position": {
     "x": 183.8771168696293,
     "y": 53.516474312802565,
-    "z": 6001,
+    "z": 2000,
     "height": 655.91986465434934,
     "width": 1079.9350072865543,
-    "tabOrder": 6001
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "azureMap",
@@ -104,21 +104,21 @@
             "zoom": {
               "expr": {
                 "Literal": {
-                  "Value": "2.48D"
+                  "Value": "0.33D"
                 }
               }
             },
             "centerLongitude": {
               "expr": {
                 "Literal": {
-                  "Value": "-116.81130000000002D"
+                  "Value": "0.0000025524717557345866D"
                 }
               }
             },
             "centerLatitude": {
               "expr": {
                 "Literal": {
-                  "Value": "48.394472017065624D"
+                  "Value": "5.684341886080802e-14D"
                 }
               }
             }
@@ -282,51 +282,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "e4fcb0f1aca6bbe47b8b",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "credit_card_full_dataset"
-              }
-            },
-            "Property": "Total transaction"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "a4be8ab2abaea07ba712",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "credit_card_full_dataset"
-              }
-            },
-            "Property": "long"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "cdfd4ab470e4dcc923d9",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "credit_card_full_dataset"
-              }
-            },
-            "Property": "lat"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

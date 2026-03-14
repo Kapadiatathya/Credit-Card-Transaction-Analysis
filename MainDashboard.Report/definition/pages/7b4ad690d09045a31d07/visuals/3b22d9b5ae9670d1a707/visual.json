@@ -3,7 +3,7 @@
   "name": "3b22d9b5ae9670d1a707",
   "position": {
     "x": 260.72128511365349,
-    "y": 120.75512152632373,
+    "y": 174.27159583912629,
     "z": 4000,
     "height": 278.56010988458769,
     "width": 972.90205866094914,
@@ -89,7 +89,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "27a81766c6d47c32536a",
+        "name": "fec4a7d8e87508ca8006",
         "field": {
           "Column": {
             "Expression": {
@@ -103,7 +103,7 @@
         "type": "Categorical"
       },
       {
-        "name": "6cbcefb708c9511b9eca",
+        "name": "ea58295c0513473de32d",
         "field": {
           "Measure": {
             "Expression": {

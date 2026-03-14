@@ -4,7 +4,7 @@
   "position": {
     "x": 625.73108427276838,
     "y": 400.68744870098328,
-    "z": 13500,
+    "z": 12000,
     "height": 146.82725003768908,
     "width": 282.67676175480329,
     "tabOrder": 6000
@@ -214,23 +214,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "879f79ab2e1b043c7328",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "credit_card_full_dataset"
-              }
-            },
-            "Property": "Fraud Rate %"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

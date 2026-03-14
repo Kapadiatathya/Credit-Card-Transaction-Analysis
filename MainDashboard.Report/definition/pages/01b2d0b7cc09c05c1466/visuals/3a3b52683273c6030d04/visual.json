@@ -2,9 +2,9 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "3a3b52683273c6030d04",
   "position": {
-    "x": 601.031173051475,
-    "y": 100.17186217524582,
-    "z": 7000,
+    "x": 592.79786931104377,
+    "y": 118.01068694618002,
+    "z": 5000,
     "height": 146.82725003768908,
     "width": 282.67676175480329,
     "tabOrder": 3000
@@ -198,23 +198,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "6d49facb174201500776",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "credit_card_full_dataset"
-              }
-            },
-            "Property": "Total transaction"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }
