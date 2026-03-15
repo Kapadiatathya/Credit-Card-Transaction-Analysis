@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "592eddc8ac3d4b12d0a1",
   "position": {
-    "x": 625.73108427276838,
-    "y": 400.68744870098328,
+    "x": 624.35886698269655,
+    "y": 388.33749309033652,
     "z": 12000,
-    "height": 146.82725003768908,
-    "width": 282.67676175480329,
+    "height": 105.66073133553327,
+    "width": 187.99376873984491,
     "tabOrder": 6000
   },
   "visual": {
@@ -214,5 +214,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "ecdae23dc921a8d9ca79",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "credit_card_full_dataset"
+              }
+            },
+            "Property": "Fraud Rate %"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

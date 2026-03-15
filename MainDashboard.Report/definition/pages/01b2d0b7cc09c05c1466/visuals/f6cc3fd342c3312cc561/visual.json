@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
-  "name": "efcbe7a13ae120c8ea08",
+  "name": "f6cc3fd342c3312cc561",
   "position": {
-    "x": 279.93232717465958,
-    "y": 399.31523141091145,
-    "z": 11000,
-    "height": 90.5663411447428,
-    "width": 231.90472202214443,
-    "tabOrder": 5000
+    "x": 263.46571969379721,
+    "y": 179.76046499941373,
+    "z": 19001,
+    "height": 111.14960049582071,
+    "width": 260.72128511365349,
+    "tabOrder": 19001
   },
   "visual": {
     "visualType": "cardVisual",
@@ -23,31 +23,16 @@
                       "Entity": "credit_card_full_dataset"
                     }
                   },
-                  "Property": "Avg Spend Per Customer"
+                  "Property": "TPV YoY Change"
                 }
               },
-              "queryRef": "credit_card_full_dataset.Avg Spend Per Customer",
-              "nativeQueryRef": "Avg Spend Per Customer"
+              "queryRef": "credit_card_full_dataset.TPV YoY Change",
+              "nativeQueryRef": "TPV YoY Change"
             }
           ]
         }
       },
       "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Measure": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "credit_card_full_dataset"
-                  }
-                },
-                "Property": "Avg Spend Per Customer"
-              }
-            },
-            "direction": "Descending"
-          }
-        ],
         "isDefaultSort": true
       }
     },
@@ -68,6 +53,19 @@
           }
         }
       ],
+      "layout": [
+        {
+          "properties": {
+            "style": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Cards'"
+                }
+              }
+            }
+          }
+        }
+      ],
       "outline": [
         {
           "properties": {
@@ -84,13 +82,13 @@
           }
         }
       ],
-      "smallMultiplesHeader": [
+      "border": [
         {
           "properties": {
-            "backgroundTransparency": {
+            "show": {
               "expr": {
                 "Literal": {
-                  "Value": "100D"
+                  "Value": "false"
                 }
               }
             }
@@ -100,20 +98,13 @@
           }
         }
       ],
-      "layout": [
+      "value": [
         {
           "properties": {
-            "backgroundShow": {
+            "horizontalAlignment": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "backgroundTransparency": {
-              "expr": {
-                "Literal": {
-                  "Value": "100D"
+                  "Value": "'center'"
                 }
               }
             }
@@ -154,6 +145,87 @@
           }
         }
       ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Total Transaction Amount'"
+                }
+              }
+            },
+            "heading": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Heading2'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "18D"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "spacing": [
+        {
+          "properties": {
+            "customizeSpacing": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "verticalSpacing": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "100D"
+                }
+              }
+            }
+          }
+        }
+      ],
       "border": [
         {
           "properties": {
@@ -166,19 +238,6 @@
             }
           }
         }
-      ],
-      "background": [
-        {
-          "properties": {
-            "transparency": {
-              "expr": {
-                "Literal": {
-                  "Value": "100D"
-                }
-              }
-            }
-          }
-        }
       ]
     },
     "drillFilterOtherVisuals": true
@@ -186,7 +245,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "8a13541250cdcb5e9000",
+        "name": "82a159eab548804bc51b",
         "field": {
           "Measure": {
             "Expression": {
@@ -194,7 +253,7 @@
                 "Entity": "credit_card_full_dataset"
               }
             },
-            "Property": "Avg Spend Per Customer"
+            "Property": "TPV YoY Change"
           }
         },
         "type": "Advanced"

@@ -61,6 +61,33 @@ table credit_card_full_dataset
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure 'TPV YoY Change' =
+			
+			VAR CurrentYear =
+			    MAX(credit_card_full_dataset[Trans_Year])
+			
+			VAR CurrentTPV =
+			    CALCULATE(
+			        [Total TPV],
+			        credit_card_full_dataset[Trans_Year] = CurrentYear
+			    )
+			
+			VAR LastYearTPV =
+			    CALCULATE(
+			        [Total TPV],
+			        credit_card_full_dataset[Trans_Year] = CurrentYear - 1
+			    )
+			
+			VAR PctChange =
+			    DIVIDE(CurrentTPV - LastYearTPV, LastYearTPV)
+			
+			VAR Arrow =
+			    IF(PctChange >= 0, UNICHAR(9650), UNICHAR(9660))
+			
+			RETURN
+			Arrow & " " & FORMAT(ABS(PctChange), "0.0%")
+		lineageTag: 0ed9cbcb-286b-4367-bdd8-1e5d3cd36c51
+
 	column trans_date_trans_time
 		dataType: dateTime
 		formatString: General Date

@@ -5,7 +5,7 @@
     "x": 263.46571969379721,
     "y": 127.61620797668303,
     "z": 3000,
-    "height": 128.98842526675489,
+    "height": 111.14960049582071,
     "width": 260.72128511365349,
     "tabOrder": 2000
   },
@@ -256,5 +256,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "d7afedc06060c0953145",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "credit_card_full_dataset"
+              }
+            },
+            "Property": "Total TPV"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

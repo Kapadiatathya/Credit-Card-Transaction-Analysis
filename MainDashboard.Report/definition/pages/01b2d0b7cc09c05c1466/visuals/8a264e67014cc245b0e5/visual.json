@@ -2,10 +2,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "8a264e67014cc245b0e5",
   "position": {
-    "x": 955.063233890015,
-    "y": 131.73285984689861,
+    "x": 967.4131895006617,
+    "y": 127.61620797668303,
     "z": 7000,
-    "height": 119.38290423625187,
+    "height": 98.799644885173961,
     "width": 160.5494229384077,
     "tabOrder": 4000
   },
@@ -83,6 +83,38 @@
             "id": "default"
           }
         }
+      ],
+      "smallMultiplesHeader": [
+        {
+          "properties": {
+            "backgroundTransparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "100D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "fillCustom": [
+        {
+          "properties": {
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -111,8 +143,39 @@
             }
           }
         }
+      ],
+      "background": [
+        {
+          "properties": {
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "100D"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "30a354a94609850a5ce2",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "credit_card_full_dataset"
+              }
+            },
+            "Property": "Active Cardholders"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
